@@ -104,3 +104,51 @@ for i in range(0,len(t_int)-1):
     
     traj.append(traj_aux)
 
+####################################################################################
+#                                                                                  #
+#                       Plotting control and trajecotry                            #
+#                                                                                  #
+####################################################################################    
+    
+    
+    
+    
+def f(x,a1,a2):
+    return [x[1],1/(1+3*a1**2)*a2,x[3],-a1/(1+3*a1**2)*a2]
+
+x_initial=[0,0,0,0]
+
+
+traj=[]
+
+traj.append(x_initial)
+
+traj_aux=x_initial
+a1=np.array(alpha_int)[:,0]
+a2=np.array(alpha_int)[:,1]
+
+for i in range(0,len(t_int)-1):
+    traj_aux=traj_aux+(t_int[i+1]-t_int[i])*np.array(f(traj[i],a1[i],a2[i]))
+    
+    traj.append(traj_aux)
+
+
+z1=[]
+z2=[]
+for i in range(len(alpha_int)):
+    z2.append(alpha_int[i][1])
+    z1.append(alpha_int[i][0])
+
+plt.plot(t_int,z1,label='$u_1$',color='red')
+plt.plot(t_int,z2,label='$u_2$',color='b')
+
+plt.xlabel('t',fontsize=15)
+plt.legend(fontsize=15)
+plt.xticks(fontsize=15)
+plt.yticks(fontsize=15)
+plt.grid()
+plt.yticks(np.arange(0,2.0+0.5,0.5))
+
+
+
+plt.savefig("comp_lee_c.png",format='png',dpi=1200)
