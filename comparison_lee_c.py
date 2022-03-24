@@ -109,29 +109,6 @@ for i in range(0,len(t_int)-1):
 #                       Plotting control and trajecotry                            #
 #                                                                                  #
 ####################################################################################    
-    
-    
-    
-    
-def f(x,a1,a2):
-    return [x[1],1/(1+3*a1**2)*a2,x[3],-a1/(1+3*a1**2)*a2]
-
-x_initial=[0,0,0,0]
-
-
-traj=[]
-
-traj.append(x_initial)
-
-traj_aux=x_initial
-a1=np.array(alpha_int)[:,0]
-a2=np.array(alpha_int)[:,1]
-
-for i in range(0,len(t_int)-1):
-    traj_aux=traj_aux+(t_int[i+1]-t_int[i])*np.array(f(traj[i],a1[i],a2[i]))
-    
-    traj.append(traj_aux)
-
 
 z1=[]
 z2=[]
@@ -149,6 +126,34 @@ plt.yticks(fontsize=15)
 plt.grid()
 plt.yticks(np.arange(0,2.0+0.5,0.5))
 
+plt.savefig("contro1_.png",format='png',dpi=1200)
+
+x1_=[0]
+x2_=[0]
+x3_=[0]
+x4_=[0]
+
+for i in range(len(traj)-1):
+    x1_.append(traj[i][0])
+    x2_.append(traj[i][1])
+    x3_.append(traj[i][2])    
+    x4_.append(traj[i][3])    
+
+    
+fig,axis=plt.subplots(2,2)
+axis[0,0].plot(t_int,x1_)
+axis[0,0].set_title('x1')
+
+axis[0,1].plot(t_int,x2_)
+axis[0,1].set_title('x2')
 
 
-plt.savefig("comp_lee_c.png",format='png',dpi=1200)
+axis[1,0].plot(t_int,x3_)
+axis[1,0].set_title('x3')
+
+axis[1,1].plot(t_int,x4_)
+axis[1,1].set_title('x4')
+plt.savefig("trajectories_.png",format='png',dpi=1200)
+
+
+
