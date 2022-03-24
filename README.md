@@ -10,7 +10,7 @@ based on our new algorithm
 
 Images of plots will be saved in the current directory.
 
-## 2. ;Run comparison_lee_c.py'
+## 2. Run comparison_lee_c.py'
 
 It appxoimates optimal control and the state trajectories with respect to is generated 
 
