@@ -1,6 +1,6 @@
 
 # Optimal control with state constraintd
- ```math e^{i\pi} + 1 = 0 ``` 
+$e^{i \pi} = -1$
 
 ## 1. Run 'lagrangian_perspective.py'
 
