@@ -1,4 +1,4 @@
-# Optimal control with state constraintd
+# Optimal control with state constraint
 
 This documents provide Python code for the experiments conducted in the paper. 
 
