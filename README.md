@@ -6,7 +6,9 @@ This documents provide Python code for the experiments conducted in the paper.
 
 This file commputes optimal control and the state trajectories generated based on our new algorithm.
 
-Images of plots will be saved in the current directory.
+Images of plots will be saved in the current directory. 
+
+The control is saved as 'control.png' and trajectories are saved as '<img src="https://render.githubusercontent.com/render/math?math=x_i">.png' for i=1,2,3,4.
 
 ## 2. Run comparison_lee_c.py'
 
@@ -17,3 +19,5 @@ Donggun Lee, Claire J. Tomlin
 https://arxiv.org/abs/2106.13440
 
 Images of plots will be saved in the current directory.
+
+The control is saved as 'control_.png' and trajectories are saved as '<img src="https://render.githubusercontent.com/render/math?math=x_i_">.png' for i=1,2,3,4.
