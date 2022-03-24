@@ -1,9 +1,6 @@
 # Optimal control with state constraintd
 
-<img src="https://render.githubusercontent.com/render/math?math=e^{i \pi} = -1">
-
-
-We consdier $e^{i \pi} = -1$
+This documents provide Python code for the experiments conducted in the paper.
 
 ## 1. Run 'lagrangian_perspective.py'
 
