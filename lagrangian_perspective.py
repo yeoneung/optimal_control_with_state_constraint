@@ -48,11 +48,6 @@ x4_0.value=0
 prob.solve()
 
 
-#dynamics
-c1=1
-c2=3
-def f(x,a):
-    return [-x[1],-1/(c1+c2*a[0]**2)*a[1],-x[3],a[0]/(c1+c2*a[0]**2)*a[1]]
 
 
 ####################################################################################
@@ -121,12 +116,31 @@ for i in range(N):
 for i in range(N):
     a2.append(-max_basis[i][1]*(c1+c2*a1[i]**2))
 
+tt=np.arange(0,1,1/N)
+plt.plot(tt,a1,label=r'$u_1$',color='r')
+plt.plot(tt,a2,label=r'$u_2$',color='b')
+plt.xlabel('t',fontsize=15)
+plt.legend(fontsize=15,loc='lower left')
+plt.xticks(fontsize=15)
+plt.yticks(fontsize=15)
+plt.grid()
+plt.yticks(np.arange(0,max(a1)+0.5,0.5))
+plt.savefig("control.png",format='png',dpi=1200)
+
     
-    def f(x,a1,a2):
-    return [x[1],1/(1+3*a1**2)*a2,x[3],-a1/(1+3*a1**2)*a2]
+    
+  
+####################################################################################
+#                                                                                  #
+#           Plot state trajectory with new control.                                #
+#                                                                                  #
+####################################################################################   
+ 
+def f(x,a1,a2):
+return [x[1],1/(1+3*a1**2)*a2,x[3],-a1/(1+3*a1**2)*a2]
+
 
 x_initial=[0,0,0,0]
-
 
 traj=[]
 
@@ -141,3 +155,58 @@ for i in range(N):
     traj.append(traj_aux)
     
     
+x1_=[]
+for i in range(len(traj)):
+    x1_.append(traj[i][0])
+
+tt=np.arange(0,1+1/N,1/N)
+plt.plot(tt,x1_,label='$x_1$ (Lagrangian)',color='r')
+plt.xlabel('t',fontsize=15)
+plt.legend(fontsize=15,loc='lower right')
+plt.xticks(fontsize=15)
+plt.yticks(fontsize=15)
+plt.grid()
+plt.yticks(np.arange(0,max(x1_)+0.02,0.02))
+plt.savefig("x1.png",format='png',dpi=1200)
+    
+      
+x2_=[]
+for i in range(len(traj)):
+    x2_.append(traj[i][1])
+
+plt.plot(tt,x2_,label='$x_2$ (Lagrangian)',color='r')
+plt.xlabel('t',fontsize=15)
+plt.legend(fontsize=15,loc='lower right')
+plt.xticks(fontsize=15)
+plt.yticks(fontsize=15)
+plt.grid()
+plt.yticks(np.arange(0,0.12,0.02))
+plt.savefig("x2.png",format='png',dpi=1200)
+
+
+x3_=[]
+for i in range(len(traj)):
+    x3_.append(traj[i][2])
+
+plt.plot(tt,x3_,label='$x_3$ (Lagrangian)',color='r')
+plt.xlabel('t',fontsize=15)
+plt.legend(fontsize=15,loc='lower left')
+plt.xticks(fontsize=15)
+plt.yticks(fontsize=15)
+plt.grid()
+plt.yticks(np.arange(-0.1,max(x3_)+0.02,0.02))
+plt.savefig("x3.png",format='png',dpi=1200)
+
+
+x4_=[]
+for i in range(len(traj)):
+    x4_.append(traj[i][3])
+
+plt.plot(tt,x4_,label='$x_4$ (Lagrangian)',color='r')
+plt.xlabel('t',fontsize=15)
+plt.legend(fontsize=15,loc='lower left')
+plt.xticks(fontsize=15)
+plt.yticks(fontsize=15)
+plt.grid()
+plt.yticks(np.arange(-0.15,max(x4_)+0.05,0.05))
+plt.savefig("x4.png",format='png',dpi=1200)
