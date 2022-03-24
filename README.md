@@ -1,6 +1,6 @@
 # Optimal control with state constraints
 
-This document provides Python code for the experiments conducted in the paper. 
+This document provides a Python code for the experiments used in the paper.
 
 The code is written based on Python 3.8.8 and CVXPY module is needed.
 
