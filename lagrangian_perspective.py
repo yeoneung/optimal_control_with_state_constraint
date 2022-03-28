@@ -1,6 +1,6 @@
 import cvxpy as cp
 import numpy as np
-
+import matplotlib.pyplot as plt
 
 # Generate a quadratic program with respect to [x1,x2,x3,x4]
 N=100
