@@ -39,7 +39,7 @@ cons = [x1[0]==x1_0]\
 +[x2[k]>=-0.1 for k in range(N)]
 
 
-prob = cp.Problem(cp.Minimize(objej),cons)
+prob = cp.Problem(cp.Minimize(obje),cons)
 x1_0.value=0
 x2_0.value=0
 x3_0.value=0
