@@ -6,7 +6,7 @@ The code is written based on Python 3.8.8 and CVXPY module is needed.
 
 ## 1. Run 'lagrangian_perspective.py'
 
-This file commputes optimal control and the state trajectories generated based on our new algorithm.
+This file computes optimal control and the state trajectories generated based on our new algorithm.
 
 Images of plots will be saved in the current directory. 
 
